@@ -76,7 +76,21 @@ GITHUB COMMANDS
 	* git pull					Fetches the changes and merges the changes with our local copy
 
  It is always a good practise to always perform pull before push
-	* git remote set-url origin [new url if changed] If any change is made to the remote then update its url using this
+	* git remote set-url origin [new url if changed]If any change is made to the remote then update its url using this
 	* git push --set-upstream origin [branchName]	Sets an upstream tracking with origin and branchNAME
+	* git pull --all				Will pull all tracking branches irrespective of branch we are on
+	* git push --all				Same as above but this time for pushing the changes
+	* git push :[branchName]			Deletes the branch from remote i.e. GitHub
+	* git fetch -p (p for prune)			Deletes branch references from local that were deleted from remote
 
+ PULLING WITH  REBASE ----------------------------------------------------------------------------------------------------
+ If you remember what rebase actually does, it rewinds the current commits that are on your branch to
+ a point to where the branch you're merging in originally diverged then playing back the commits that
+ happened on the branch that you're wanting to bring in; and then, after that, playing on top of that 
+ any commits that have happened on the branch that you're currently on, thus making any changes that 
+ you have include the changes that happened on the remote branch, but with your changes made ahead of 
+ them. This is a good strategy when you're working on something, and you want to make sure that your 
+ changes are ahead of whatever's going on from the remote side.
+	* git pull --rebase				Causes whatever is explained above
+	* 
 
