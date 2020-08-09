@@ -1,0 +1,82 @@
+Topics covered are :
+--------------------
+BASIC COMMANDS
+ADVANCED COMMANDS
+GITHUB COMMANDS
+
+---------------------------------------------------------------------------------------------------------------------------
+BASIC COMMANDS
+---------------------------------------------------------------------------------------------------------------------------
+	* git config --global --user.name "[username]"	This sets the user name in global config file
+	* git config --global --user.email "[email]"	This sets the user email in global config file
+ 	* git config --global core.editor "code -w"	Sets VSCode as default editor
+ 	* git status					This shows what files are tracked, modified and needs commit
+ 	* git add [filename]				Adds the specific file for staging
+ 	* git add .					Uses the wildcard '.' for adding all files to staging
+ 	* git commit -m ["message"]			Commits the changes from staging state to final commited stage
+ 	* git commit -am ["message"]			Shortcut to skip [git add filename] and directly commit
+ 	* git ls-files					Shows files that are being tracked by git
+ 	* git log					Shows the log history
+ 	* git show					Similar to log
+ 	* git log --oneline				Shows one line entry for commits
+
+ THESE BELOW COMMANDS WILL ONLY WORK BEFORE COMMIT. AFTER COMMIT THESE WILL HAVE NO EFFECT.
+ 	* git restore --staged [filename]		Removes file from staging		
+ 	* git restore [filename]			Restores file and discards new changes made to file
+ OTHER COMMANDS THAT COULD BE USED IN PLACE OF ABOVE ARE: 
+ 	* git reset HEAD [filename]			Removes file from staging
+ 	* git checkout -- [filename]			Restores file and discards new changes made to file
+ HOWEVER THE GIT_RESTORE_--STAGED AND GIT_RESTORE COMMANDS ARE EASY AND MORE INTUITIVE TO USE
+
+ 	* git mv [fileOld] [fileNew]
+ 	* git config --global alias.hist "log --oneline --graph --decorate --all"			creates alias
+ 	* git config --global -e			Opens the global config file for modification
+ 	
+	IF ANY MODIFICATION IS MADE OUT OF THE GIT, EXAMPLE IF MV RM IS USED AND NOT GIT RM, GIT MV THEN
+ 	USE THE [GIT ADD -A] CAPITAL A NOT -a. THIS WILL FIX ALL THE PROBLEMS AND ADD CORRECT FILES FOR STAGING
+
+---------------------------------------------------------------------------------------------------------------------------
+ADVANCED COMMANDS
+---------------------------------------------------------------------------------------------------------------------------
+	* git checkout -b [branchname]			Creates a new branch with branchname and checkout to it. 
+	* git branch					Shows the branches
+	* git checkout [branchname]			Checkouts to a new branch ie. changes from one to another branch
+	* git merge [branchname]			Merges branchname to current active branch
+	* git branch -d [branchname]			Deletes the branch with branchname
+
+ GIT HAS TWO TYPES OF TAGS --ANOTATED--&--SIMPLE--
+	* git tag [tagname]				Is a lightweight tag
+	* git tag -a [tagname] -m ["commit notes"]	Is an anotated tag that contains extra information
+
+ GIT HAS THREE TYPES OF RESET MODES --SOFT--MIXED--HARD--
+	SOFT::  Only head is changed
+	MIXED:: Head and index both changes
+	HARD::  Head, index and the files in working directory all changes
+	-- A good explanation is given an stack overflow
+	-- What is Index? When we do [git add .] the files in '.' are added to Index to be commited
+	   only the files in the index are commited to repo.
+	-- So a soft reset does not effect the INDEX but only the HEAD
+	-- So a mixedreset does not effect the FILES in WORKING DIRECTORY but only the INDEX and HEAD
+	-- So a hard reset will effect everything INDEX, HEAD & WORKING DIRECTORY 
+	 
+
+NOTE: While merging there could be 3 scenaros --1-- Fast Merge --2-- Auto Merge (No Conflict) --3-- Manual Merge (Conflict)
+
+---------------------------------------------------------------------------------------------------------------------------
+GITHUB COMMANDS
+---------------------------------------------------------------------------------------------------------------------------
+	* git remote -v					Shows the status of the remote
+	* git remote add origin [link to repo on github]Adds the current repo to GH with the name as "origin"
+	* git push -u origin master --tags		Pushes changes to GH origin -> master including tags, sets tracking
+	* git push origin master			Pushes the changes to GH origin tracking not needed as done already
+
+ GIT PULL ARE TWO COMMANDS IN ONE, IT COMBINES GIT FETCH AND GIT MERGE. AS THERE COULD BE CONFLICTS WHILE MERGING SO WE CAN
+ USE GIT FETCH TO BE SAFE AS GIT FETCH COMMAND IS NON DESTRUCTIVE.
+	* git fetch					Fetches the changes from GH
+	* git pull					Fetches the changes and merges the changes with our local copy
+
+ It is always a good practise to always perform pull before push
+	* git remote set-url origin [new url if changed] If any change is made to the remote then update its url using this
+	* git push --set-upstream origin [branchName]	Sets an upstream tracking with origin and branchNAME
+
+
