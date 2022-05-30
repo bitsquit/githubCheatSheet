@@ -69,7 +69,10 @@ GITHUB COMMANDS
 	* git remote add origin [link to repo on github]Adds the current repo to GH with the name as "origin"
 	* git push -u origin master --tags		Pushes changes to GH origin -> master including tags, sets tracking
 	* git push origin master			Pushes the changes to GH origin tracking not needed as done already
-
+	* git push -u origin [name of the branch to be pushed to github]
+		The above command could be used to push newly created branch to github and setup a tracking relationship
+		with it.
+	
  GIT PULL ARE TWO COMMANDS IN ONE, IT COMBINES GIT FETCH AND GIT MERGE. AS THERE COULD BE CONFLICTS WHILE MERGING SO WE CAN
  USE GIT FETCH TO BE SAFE AS GIT FETCH COMMAND IS NON DESTRUCTIVE.
 	* git fetch					Fetches the changes from GH
