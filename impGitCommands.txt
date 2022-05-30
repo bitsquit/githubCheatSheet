@@ -83,7 +83,7 @@ GITHUB COMMANDS
 	* git push --set-upstream origin [branchName]	Sets an upstream tracking with origin and branchNAME
 	* git pull --all				Will pull all tracking branches irrespective of branch we are on
 	* git push --all				Same as above but this time for pushing the changes
-	* git push :[branchName]			Deletes the branch from remote i.e. GitHub
+	* git push origin :[branchName]			Deletes the branch from remote i.e. GitHub
 	* git fetch -p (p for prune)			Deletes branch references from local that were deleted from remote
 							After deleting any branch on the GITHUB run this command on the 
 							local machine terminal to delete the same brach on the local repo.
